@@ -1,0 +1,42 @@
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+public class olympics
+{
+    public static void main(String s[])
+    {
+        newframe2 w=new newframe2();
+        w.setSize(600,600); //width,height
+        w.setVisible(true);;
+    }
+}
+class newframe2 extends Frame
+{ public newframe2()
+{
+    addWindowListener (new WindowAdapter() {
+        public void windowClosing (WindowEvent e) {
+            dispose();
+        }
+    });
+}
+    public void paint(Graphics g)
+    {
+        //face
+
+        g.setColor(Color.BLUE);
+        g.drawOval(50,50,96,96);
+
+        g.setColor(Color.yellow);
+        g.drawOval(100,100,96,96);
+
+        g.setColor(Color.black);
+        g.drawOval(150,50,94,94);
+
+        g.setColor(Color.green);
+        g.drawOval(200,100,94,94);
+
+        g.setColor(Color.red);
+        g.drawOval(250,50,98,98);
+
+    }
+}
