@@ -1,0 +1,38 @@
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+public class Smile
+{
+    public static void main(String s[])
+    {
+        newframe1 m=new newframe1();
+        m.setSize(600,600); //width,height
+        m.setVisible(true);;
+    }
+}
+class newframe1 extends Frame
+{ public newframe1()
+    {
+        addWindowListener (new WindowAdapter() {
+            public void windowClosing (WindowEvent e) {
+                dispose();
+            }
+        });
+    }
+    public void paint(Graphics g)
+    {
+        //face
+        g.drawOval(100,100,200,200);// x,y,width,height
+        g.setColor(Color.yellow);
+        g.fillOval(100,100,200,200);
+        //eyes
+        g.setColor(Color.BLACK);
+        g.fillOval(150,150,30,30);
+
+        g.setColor(Color.BLACK);
+        g.fillOval(236,150,30,30);
+         //mouth
+        g.setColor(Color.BLACK);
+        g.fillArc(150,150,110,100,180,180);
+    }
+}
