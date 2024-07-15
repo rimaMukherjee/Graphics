@@ -1,0 +1,52 @@
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+public class umbrella
+{
+    public static void main(String s[])
+    {
+        newframe3 r=new newframe3();
+        r.setSize(600,600); //width,height
+        r.setVisible(true);;
+    }
+}
+class newframe3 extends Frame
+{
+    public newframe3()
+    {
+        addWindowListener (new WindowAdapter() {
+            public void windowClosing (WindowEvent e) {
+                dispose();
+            }
+        });
+    }
+    public void paint(Graphics g)
+    {
+        int r1,g1,b1;Color c;
+        r1=(int)(Math.round(Math.random()*255));
+        g1=(int)(Math.round(Math.random()*255));
+        b1=(int)(Math.round(Math.random()*255));
+        c=new Color(r1,g1,b1);
+        g.setColor(c);
+        g.fillArc(50,50,200,250,0,180);
+        g.setColor(Color.black);
+        g.fillRect(143,174,10,100);
+         g.setColor(Color.BLACK);
+         g.fillArc(137,32,30,40,0,180);
+         g.setColor(Color.black);
+         g.fillArc(142,249,30,50,0,-180);
+         g.setColor(Color.black);
+         g.drawLine(145,173,150,50);
+        g.drawLine(190,173,150,50);
+        g.drawLine(248,173,150,50);
+        g.drawLine(100,173,150,50);
+        g.drawLine(52,173,150,50);
+        try
+        {Thread.sleep(500);
+            repaint();
+        }
+        catch(Exception e)
+        {}
+    }
+}
+
